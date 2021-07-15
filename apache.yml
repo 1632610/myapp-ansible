@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: webservers
   tasks:
    - name: Install Maven using Ansible
      become: yes
@@ -8,9 +8,4 @@
       state: present
      vars:
       packages:
-   - maven
-   - name: Deploy static website
-     copy:
-       src: index.html
-       dest: /var/www/html/
-...
+       - maven
